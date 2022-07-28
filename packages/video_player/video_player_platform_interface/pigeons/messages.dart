@@ -42,6 +42,15 @@ class MixWithOthersMessage {
   bool mixWithOthers;
 }
 
+class PictureInPictureMessage {
+  int textureId;
+  int enabled;
+  double left;
+  double top;
+  double width;
+  double height;
+}
+
 @HostApi(dartHostTestHandler: 'TestHostVideoPlayerApi')
 abstract class VideoPlayerApi {
   void initialize();
@@ -55,6 +64,7 @@ abstract class VideoPlayerApi {
   void seekTo(PositionMessage msg);
   void pause(TextureMessage msg);
   void setMixWithOthers(MixWithOthersMessage msg);
+  void setPictureInPicture(PictureInPictureMessage msg);
 }
 
 void configurePigeon(PigeonOptions opts) {
